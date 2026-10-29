@@ -10,7 +10,7 @@ export interface ISensorDataPayload {
   humidity: number;
   light: number;
 }
-
+//thêm cho zui
 export interface IGetList {
   page?: number;
   limit?: number;
