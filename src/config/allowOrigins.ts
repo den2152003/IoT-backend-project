@@ -17,7 +17,7 @@ const allowOrigins: TAllowOrigins[] = [
   },
   {
     protocol: ["http", "https"],
-    domain: "192.168.1.209",
+    domain: "192.168.116.1",
     ports: [4173]
   },
   {

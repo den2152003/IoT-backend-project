@@ -1,4 +1,11 @@
-import "dotenv/config";
+import dotenv from "dotenv";
+
+const envFile =
+  process.env.NODE_ENV === "production"
+    ? ".env.production"
+    : ".env.development";
+
+dotenv.config({ path: envFile });
 
 const ENV = {
   PORT: Number(process.env.PORT ?? 6001),
@@ -30,6 +37,10 @@ const ENV = {
 
 if (!ENV.MONGODB_URI) {
   throw new Error("MONGODB_URI is not configured");
+}
+
+if (!ENV.ACCESS_TOKEN_SECRET || !ENV.REFRESH_TOKEN_SECRET) {
+  throw new Error("JWT secrets are not configured");
 }
 
 export default ENV;
